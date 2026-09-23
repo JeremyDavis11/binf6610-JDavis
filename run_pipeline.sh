@@ -13,7 +13,8 @@ LAST=${3:-publish}
 # config
 REF_DIR=${REF_DIR:-data/refs/grch38}
 THREADS=${THREADS:-4}
-FASTA=${FASTA:-${REF_DIR}/chr20.fa}
+FASTA=${REF:-${FASTA:-${REF_DIR}/chr20.fa}}
+REGION=${REGION:-chr20}
 INDEX=${INDEX:-${FASTA}}
 DEV=${DEV:-dev}
 SLICE_LINES=${SLICE_LINES:-16000}
@@ -196,12 +197,12 @@ stage_merge() {
 	done < <(tail -n +2 "$SHEET")
 	
 	rm -rf "${OUT}/genomicsdb" # GATK refuses to write into an existing workspace so a re-run fails without this	
-	gatk GenomicsDBImport $vargs --genomicsdb-workspace-path "${OUT}/genomicsdb"  -L chr20 > "${LOG}/genomicsdbimport.log" 2>&1
+	gatk GenomicsDBImport $vargs --genomicsdb-workspace-path "${OUT}/genomicsdb"  -L "$REGION" > "${LOG}/genomicsdbimport.log" 2>&1
 	gatk GenotypeGVCFs -R "$FASTA" -V "gendb://${OUT}/genomicsdb" -O "${RES}/cohort.vcf.gz" > "${LOG}/genotypegvcfs.log" 2>&1
 	
 	# verify
 	[[ -s "${RES}/cohort.vcf.gz" ]] || die "no cohort vcf generated"
-	n=$(gzip -dc "${RES}/cohort.vcf.gz" | grep -m1 '^#CHROM' | awk '{ print NF - 9 }')
+	n=$(gzip -dc "${RES}/cohort.vcf.gz" | grep '^#CHROM' | awk '{ print NF - 9 }')
 	expected=$(tail -n +2 "$SHEET" | wc -l)
 	(( n == expected )) || die "cohort VCF has $n samples, expected $expected"
 }

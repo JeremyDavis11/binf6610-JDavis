@@ -1,0 +1,17 @@
+	{
+		"pipeline": {
+			"name": "variant-call",
+			"version": "1.0.0",
+			"implementation": "bash",
+			"git_sha": "unknown",
+			"run_id": "2026-09-23T22:03:19Z-46139",
+			"started_at": "2026-09-23T22:01:36Z",
+			"finished_at": "2026-09-23T22:03:19Z",
+			"exit_status": "success"
+			},
+			"platform": { "kind": "laptop" },
+			"reference": { "genome": "GRCh38.chr20" },
+			"samples": [ {"sample_id":"smoke_01","library_type":"paired","condition":"unaffected"},{"sample_id":"smoke_02","library_type":"paired","condition":"affected"},{"sample_id":"smoke_03","library_type":"single","condition":"affected"} ],
+			"outputs": [ {"stage":"merge","type":"cohort_vcf","path":"cohort.vcf.gz","checksum":"sha256:0803fa64c2c66fff616406296b674a6b44ce70729e7a8ee58ce9c2e16b62cd0d"},{"stage":"analyze","type":"filtered_vcf","path":"cohort.filtered.vcf.gz","checksum":"sha256:bdf95db8d7856934b0beef07053c042a596570ce1e8682b5ded63b25ee05f646"},{"stage":"qc_report","type":"multiqc","path":"multiqc_report.html","checksum":"sha256:5ef3007478fcc5a6f135376acf4135621b1662a0fef11fd6f6abfe1258957a58"},{"stage":"publish","type":"run_info","path":"db/run_info.tsv","checksum":"sha256:6d4f43359038c8acbfb705c344ddd77b89f2036c62be9e11b62dce7968a47c1a"} ],
+			"metrics": [ {"sample_id":"smoke_01","metric":"reads_after_trim","value":100000,"unit":"count","stage":"trim"},{"sample_id":"smoke_02","metric":"reads_after_trim","value":100000,"unit":"count","stage":"trim"},{"sample_id":"smoke_03","metric":"reads_after_trim","value":60000,"unit":"count","stage":"trim"} ] 
+		}
