@@ -1,4 +1,19 @@
+# ignore everything
+/*
+
+# except the two assignment directories
+!/week1/
+/week1/*
+!/week1/w01_assignment/
+!/week2/
+/week2/*
+!/week2/w02_assignment/
+
+# and inside those, still skip run output
 out/
+logs/
 dev/
 data/
-fetch_slices.sh
+smoke-out/
+smoke/
+*.zip
