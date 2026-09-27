@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=w2-cohort
-#SBATCH --cpus-per-task=4
-#SBATCH --mem=8G
+#SBATCH --cpus-per-task=2
+#SBATCH --mem=4G
 #SBATCH --time=01:00:00
 #SBATCH --output=logs/cohort_%j.out
 #SBATCH --export=NONE
@@ -22,10 +22,15 @@ module load miniconda3/25.9.1
 source activate "${CONDA_ENV}"
 
 export THREADS="${SLURM_CPUS_PER_TASK}"
-export REF_DIR FASTQ_ROOT
+export REF_DIR FASTQ_ROOT REGION
 export TMPDIR="/tmp/${SLURM_JOB_ID}"
 mkdir -p "${TMPDIR}"
 trap 'rm -rf "${TMPDIR}"' EXIT
+
+# check GVCFs before proceeding
+n=$(ls "${RUN_ROOT}/run/GVCF/"*.g.vcf.gz 2>/dev/null | wc -l)
+expected=$(tail -n +2 "$SHEET" | wc -l)
+(( n == expected )) || { echo "cohort: expected ${expected} GVCFs, found ${n}" >&2; exit 1; }
 
 echo "cohort on $(hostname), ${SLURM_CPUS_PER_TASK} cores"
 bash "${PIPELINE_DIR}/run_pipeline.sh" "${SHEET}" "${RUN_ROOT}/run" publish

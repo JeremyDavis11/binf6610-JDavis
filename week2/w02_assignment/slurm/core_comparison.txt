@@ -1,0 +1,38 @@
+JobID           JobName  AllocCPUS    Elapsed     MaxRSS      State 
+------------ ---------- ---------- ---------- ---------- ---------- 
+10625747_1   w2-persam+         16   00:00:11                FAILED 
+10625747_1.+      batch         16   00:00:11     45324K     FAILED 
+10625747_1.+     extern         16   00:00:11       256K  COMPLETED 
+10625747_2   w2-persam+         16   00:00:06                FAILED 
+10625747_2.+      batch         16   00:00:06     45496K     FAILED 
+10625747_2.+     extern         16   00:00:06       256K  COMPLETED 
+10625787      w2-cohort          4   00:53:21            CANCELLED+ 
+10625787.ba+      batch          4   00:53:22  10992140K  CANCELLED 
+10625787.ex+     extern          4   00:53:21       256K  COMPLETED 
+10625786_1   w2-persam+         16   00:07:33             COMPLETED 
+10625786_1.+      batch         16   00:07:33  11625036K  COMPLETED 
+10625786_1.+     extern         16   00:07:33       256K  COMPLETED 
+10625786_2   w2-persam+         16   00:08:05             COMPLETED 
+10625786_2.+      batch         16   00:08:05  13828264K  COMPLETED 
+10625786_2.+     extern         16   00:08:05       256K  COMPLETED 
+10627630      w2-cohort          4   00:00:11                FAILED 
+10627630.ba+      batch          4   00:00:11       604K     FAILED 
+10627630.ex+     extern          4   00:00:11       256K  COMPLETED 
+10627629_1   w2-persam+         16   00:06:55             COMPLETED 
+10627629_1.+      batch         16   00:06:55   7238368K  COMPLETED 
+10627629_1.+     extern         16   00:06:55       256K  COMPLETED 
+10627629_2   w2-persam+         16   00:07:25             COMPLETED 
+10627629_2.+      batch         16   00:07:25  14814924K  COMPLETED 
+10627629_2.+     extern         16   00:07:25       256K  COMPLETED 
+10627629_3   w2-persam+         16   00:05:07             COMPLETED 
+10627629_3.+      batch         16   00:05:07   6420264K  COMPLETED 
+10627629_3.+     extern         16   00:05:07       256K  COMPLETED 
+10628231_1   w2-persam+          4   00:09:25             COMPLETED 
+10628231_1.+      batch          4   00:09:25   6265152K  COMPLETED 
+10628231_1.+     extern          4   00:09:25       256K  COMPLETED 
+10628391_1   w2-persam+          8   00:08:10             COMPLETED 
+10628391_1.+      batch          8   00:08:10   7593384K  COMPLETED 
+10628391_1.+     extern          8   00:08:10       256K  COMPLETED 
+10628531_1   w2-persam+         16   00:06:52             COMPLETED 
+10628531_1.+      batch         16   00:06:52  13628308K  COMPLETED 
+10628531_1.+     extern         16   00:06:52       256K  COMPLETED 

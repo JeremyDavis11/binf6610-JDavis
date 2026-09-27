@@ -1,9 +1,9 @@
 #!/bin/bash
 #SBATCH --job-name=w2-persample
 #SBATCH --array=1-8
-#SBATCH --cpus-per-task=16
-#SBATCH --mem=32G
-#SBATCH --time=02:00:00
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=16G
+#SBATCH --time=00:20:00
 #SBATCH --output=logs/persample_%A_%a.out
 #SBATCH --export=NONE
 #-----------------------------------------------------------------------------
@@ -26,7 +26,7 @@ source activate "${CONDA_ENV}"
 # The threads Slurm actually gave us, handed to the tools. The pipeline already
 # reads THREADS from the environment, so this is the whole change.
 export THREADS="${SLURM_CPUS_PER_TASK}"
-export REF_DIR FASTQ_ROOT
+export REF_DIR FASTQ_ROOT REGION
 
 # Scratch on the node's own disk, and a trap that removes it however this job
 # ends. /tmp here is shared with every other job on the node, and a `rm` at the

@@ -22,7 +22,7 @@ sha256_of() {
 # Configuration: every value overridable from the environment, every one with a
 # default, so no path is written into the code.
 REF_DIR=${REF_DIR:-/courses/BINF6610.202710/data/refs/grch38-1000g}
-FASTA=${REF:-${FASTA:-${REF_DIR}/GRch38_full_analysis_set_plus_decoy_hla.fa}}
+FASTA=${REF:-${FASTA:-${REF_DIR}/GRCh38_full_analysis_set_plus_decoy_hla.fa}}
 REGION=${REGION:-chr20}
 INDEX=${INDEX:-${FASTA}}
 FASTQ_ROOT=${FASTQ_ROOT:-/courses/BINF6610.202710/data}
@@ -38,7 +38,7 @@ ALIGN_THREADS=$(( THREADS > SORT_THREADS ? THREADS - SORT_THREADS : 1 ))
 # Output layout. Derived from OUT, which the driver sets.
 setup_dirs() {
     QC="${OUT}/qc_raw"; TRIM="${OUT}/trim"; ALN="${OUT}/align"; GVCF="${OUT}/GVCF"
-    LOG="${OUT}/logs"; RES="${OUT}/results"; DB="${RES}/DB"
+    LOG="${OUT}/logs"; RES="${OUT}/results"; DB="${RES}/db"
     mkdir -p "$QC" "$GVCF" "$TRIM" "$ALN" "$LOG" "$RES" "$DB"
 }
 

@@ -8,8 +8,8 @@ stage_merge() {
 	done < <(rows "$SHEET")
 	
 	rm -rf "${OUT}/genomicsdb" # GATK refuses to write into an existing workspace so a re-run fails without this	
-	gatk GenomicsDBImport $vargs --genomicsdb-workspace-path "${OUT}/genomicsdb"  -L "$REGION" > "${LOG}/genomicsdbimport.log" 2>&1
-	gatk GenotypeGVCFs -R "$FASTA" -V "gendb://${OUT}/genomicsdb" -O "${RES}/cohort.vcf.gz" > "${LOG}/genotypegvcfs.log" 2>&1
+	gatk GenomicsDBImport $vargs --genomicsdb-workspace-path "${OUT}/genomicsdb" -L "$REGION" --tmp-dir "${TMPDIR:-/tmp}" > "${LOG}/genomicsdbimport.log" 2>&1
+	gatk GenotypeGVCFs -R "$FASTA" -V "gendb://${OUT}/genomicsdb" -O "${RES}/cohort.vcf.gz" --tmp-dir "${TMPDIR:-/tmp}" > "${LOG}/genotypegvcfs.log" 2>&1
 	
 	# verify
 	[[ -s "${RES}/cohort.vcf.gz" ]] || die "no cohort vcf generated"
