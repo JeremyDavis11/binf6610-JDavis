@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name=w2-cohort
-#SBATCH --cpus-per-task=2
-#SBATCH --mem=4G
-#SBATCH --time=01:00:00
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=16G
+#SBATCH --time=02:00:00
 #SBATCH --output=logs/cohort_%j.out
 #SBATCH --export=NONE
 #-----------------------------------------------------------------------------
