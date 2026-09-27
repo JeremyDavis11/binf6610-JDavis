@@ -1,0 +1,17 @@
+	{
+		"pipeline": {
+			"name": "variant-call",
+			"version": "1.0.0",
+			"implementation": "bash",
+			"git_sha": "98dee34",
+			"run_id": "2026-09-27T23:31:32Z-1402933",
+			"started_at": "2026-09-27T23:01:28Z",
+			"finished_at": "2026-09-27T23:31:32Z",
+			"exit_status": "success"
+			},
+			"platform": { "kind": "laptop" },
+			"reference": { "genome": "GRCh38_full_analysis_set_plus_decoy_hla" },
+			"samples": [ {"sample_id":"NA12878","library_type":"paired","condition":"affected"},{"sample_id":"NA12891","library_type":"paired","condition":"affected"},{"sample_id":"NA12892","library_type":"single","condition":"unaffected"},{"sample_id":"NA07357","library_type":"paired","condition":"unaffected"},{"sample_id":"NA12003","library_type":"single","condition":"affected"},{"sample_id":"NA10851","library_type":"paired","condition":"unaffected"},{"sample_id":"NA12813","library_type":"paired","condition":"affected"},{"sample_id":"NA12873","library_type":"paired","condition":"unaffected"} ],
+			"outputs": [ {"stage":"merge","type":"cohort_vcf","path":"cohort.vcf.gz","checksum":"sha256:0a3c9267670208c7c1fd55222d19f00e6bfb39fc3b43eba13bbd222dc7869c70"},{"stage":"analyze","type":"filtered_vcf","path":"cohort.filtered.vcf.gz","checksum":"sha256:1a51ffce4989b01ad4c04278aeebb30deb5a563c2cbae78f2497081f1c949efd"},{"stage":"qc_report","type":"multiqc","path":"multiqc_report.html","checksum":"sha256:94a2ff2a56dbc982d58a02234d7f1da3d8d9ca48527d2e5bae6b433f7b8eb080"},{"stage":"publish","type":"run_info","path":"db/run_info.tsv","checksum":"sha256:b6d27e9a3ac84cde09b0a9d631a851ed370640ad533191c450cc14d69e7209e6"} ],
+			"metrics": [ {"sample_id":"NA12878","metric":"reads_after_trim","value":1222355,"unit":"count","stage":"trim"},{"sample_id":"NA12891","metric":"reads_after_trim","value":1247760,"unit":"count","stage":"trim"},{"sample_id":"NA12892","metric":"reads_after_trim","value":1257860,"unit":"count","stage":"trim"},{"sample_id":"NA07357","metric":"reads_after_trim","value":1120318,"unit":"count","stage":"trim"},{"sample_id":"NA12003","metric":"reads_after_trim","value":1355375,"unit":"count","stage":"trim"},{"sample_id":"NA10851","metric":"reads_after_trim","value":1239530,"unit":"count","stage":"trim"},{"sample_id":"NA12813","metric":"reads_after_trim","value":2065252,"unit":"count","stage":"trim"},{"sample_id":"NA12873","metric":"reads_after_trim","value":1490067,"unit":"count","stage":"trim"} ] 
+		}

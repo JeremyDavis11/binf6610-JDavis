@@ -63,7 +63,7 @@ Cohort (stages 6-9) resource choices:
 |---|---|---|---|---|---|---|---|
 | 10642528 | 8 | 32G | 1:00:00 | 28:21 | 0.36 | 1.69 GB | COMPLETED |
 | 10647115 | 2 | 4G | 1:00:00 | 60:04 | — | — | TIMEOUT |
-| final | 4 | 16G | 2:00:00 | | | | |
+| final | 4 | 16G | 2:00:00 | 30:12 |0.35 | 1.81GB | COMPLETED |
 
 cores busy: 10:18 / 28:21 = 618 / 1701 = 0.36 cores. I asked for 8 cores and used about 1/3 of 1 core. Everything in stages 6-9 is single threaded and most of the wall clock is I/O waiting for GenomicsDBImport, not computational time.
 
@@ -74,6 +74,8 @@ At 0.36 busy cores, comparing across 4/8/16 cores tells me nothing. Extra cores 
 The 28 minute run is mostly I/O time and not CPU working time. Allotting an hour (02:00:00) of maximum run time provides a buffer for larger samples while not letting a stalled program run and eat resources for too long.
  
 Becuase only 1 core is s used at any time with low memory requirements, I will use 4 cores and 16GB of memory for the cohort steps. This keeps me aboive the 1.69GB maximum memory utilization with some buffer.
+
+4G caused a timeout at 60 minutes and 16G completed in 30 minutes.
 
 8 nodes seff file (10642528):
 Job ID: 10642528
@@ -88,7 +90,7 @@ Job Wall-clock time: 00:28:21
 Memory Utilized: 1.69 GB
 Memory Efficiency: 5.27% of 32.00 GB
 
-2 nodes seff file (10647115) - resulted in timeout
+2 nodes seff file (10647115) - resulted in TIMEOUT:
 Job ID: 10647115
 Cluster: explorer
 User/Group: davis.jer/users
@@ -100,3 +102,16 @@ CPU Efficiency: 3.20% of 02:00:08 core-walltime
 Job Wall-clock time: 01:00:04
 Memory Utilized: 1.02 GB
 Memory Efficiency: 25.53% of 4.00 GB
+
+4 nodes/16G run seff:
+Job ID: 10648355
+Cluster: explorer
+User/Group: davis.jer/users
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 4
+CPU Utilized: 00:10:36
+CPU Efficiency: 8.77% of 02:00:48 core-walltime
+Job Wall-clock time: 00:30:12
+Memory Utilized: 1.81 GB
+Memory Efficiency: 11.34% of 16.00 GB 
