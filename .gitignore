@@ -1,13 +1,11 @@
 # ignore everything
 /*
 
-# except the two assignment directories
+# except the week 1 submission (frozen) and the live pipeline
 !/week1/
 /week1/*
 !/week1/w01_assignment/
-!/week2/
-/week2/*
-!/week2/w02_assignment/
+!/pipeline/
 
 # and inside those, still skip run output
 out/
