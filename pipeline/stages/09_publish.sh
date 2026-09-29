@@ -68,7 +68,7 @@ stage_publish() {
 			"finished_at": "${finished_at}",
 			"exit_status": "success"
 			},
-			"platform": { "kind": "${PLATFORM_KIND}" },
+			"platform": { "kind": "${PLATFORM_KIND}", "container": "${APPTAINER_CONTAINER}" },
 			"reference": { "genome": "GRCh38_full_analysis_set_plus_decoy_hla" },
 			"samples": [ ${samples_json} ],
 			"outputs": [ ${outputs_json} ],

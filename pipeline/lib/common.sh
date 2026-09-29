@@ -29,6 +29,7 @@ FASTQ_ROOT=${FASTQ_ROOT:-/courses/BINF6610.202710/data}
 THREADS=${THREADS:-4}
 PLATFORM_KIND=${PLATFORM_KIND:-laptop}
 IMPLEMENTATION=${IMPLEMENTATION:-bash}
+APPTAINER_CONTAINER=${APPTAINER_CONTAINER:-}
 
 # samtools sort runs in the same pipe as bwa and out of the same allocation,
 # so the two have to divide the cores between them rather than each taking all.

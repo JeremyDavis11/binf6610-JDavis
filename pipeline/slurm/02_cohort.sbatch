@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=w2-cohort
+#SBATCH --job-name=w3-cohort
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16G
 #SBATCH --time=02:00:00
@@ -18,9 +18,6 @@ if [[ ! -s "${SLURM_SUBMIT_DIR}/conf/slurm.env" ]]; then
 fi
 source "${SLURM_SUBMIT_DIR}/conf/slurm.env"
 
-module load miniconda3/25.9.1
-source activate "${CONDA_ENV}"
-
 export THREADS="${SLURM_CPUS_PER_TASK}"
 export REF_DIR FASTQ_ROOT REGION
 export TMPDIR="/tmp/${SLURM_JOB_ID}"
@@ -33,7 +30,20 @@ expected=$(tail -n +2 "$SHEET" | wc -l)
 (( n == expected )) || { echo "cohort: expected ${expected} GVCFs, found ${n}" >&2; exit 1; }
 
 echo "cohort on $(hostname), ${SLURM_CPUS_PER_TASK} cores"
-bash "${PIPELINE_DIR}/run_pipeline.sh" "${SHEET}" "${RUN_ROOT}/run" publish
+
+apptainer exec --cleanenv \
+    --env THREADS="${THREADS}" \
+    --env TMPDIR="${TMPDIR}" \
+    --env SLURM_JOB_ID="${SLURM_JOB_ID}" \
+    --env SLURM_CPUS_PER_TASK="${SLURM_CPUS_PER_TASK}" \
+    --env REF_DIR="${REF_DIR}" \
+    --env FASTQ_ROOT="${FASTQ_ROOT}" \
+    --env REGION="${REGION}" \
+    --env PLATFORM_KIND="${PLATFORM_KIND}" \
+    --env IMPLEMENTATION="${IMPLEMENTATION}" \
+    --bind /courses/BINF6610.202710,/scratch/${USER} \
+    "${SIF}" \
+    bash "${PIPELINE_DIR}/run_pipeline.sh" "${SHEET}" "${RUN_ROOT}/run" publish
 
 # The results are small and must outlive the /scratch purge. The BAMs are not
 # and stay where they are.
