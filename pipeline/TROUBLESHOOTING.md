@@ -13,7 +13,16 @@ missing -L on the HaplotypeCaller slowed down analysis significantly because it 
 # Week 3 troubleshooting
 
 ## Breakage 1
-
+In a scratch directory, build `FROM ubuntu (no tag) with RUN apt-get update && apt-get install -y curl`; a day later rebuild with `docker build --pull --no-cache`
+The full list of packages in the day 1 build of the container are in `packages-day1.txt` and the packages for the day 2 build are found in `packages-day2.txt`
+Lines that differ between packages (day 1 then day 2):
+```
+< ii  openssl                        3.5.5-1ubuntu3.5                   arm64        Secure Sockets Layer toolkit - cryptographic utility
+---
+> ii  openssl                        3.5.5-1ubuntu3.6                   arm64        Secure Sockets Layer toolkit - cryptographic utility
+```
+`openssl` went from `3.5.5-1ubuntu3.5` to `3.5.5-1ubuntu3.6`. `apt-get update && apt-get install -y curl` found live Ubuntu repositories, and between the two builds (~72 hours), Ubuntu published a new version of `openssl`. 
+Identical Dockerfile produced two different images. This is why you should pin every version of packages in a container to be properly reproducable. 
 
 ## Breakage 2
 Remove `--bind` from one job script and run one sample
