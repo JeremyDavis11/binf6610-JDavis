@@ -6,6 +6,7 @@
 /week1/*
 !/week1/w01_assignment/
 !/pipeline/
+!/nf-pipeline/
 
 # and inside those, still skip run output
 out/
@@ -15,3 +16,8 @@ data/
 smoke-out/
 smoke/
 *.zip
+work/
+.nextflow/
+.nextflow.log*
+results/
+nf-head-*.out
