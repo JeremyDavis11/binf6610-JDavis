@@ -13,6 +13,6 @@ process QUANTIFY {
 
     script:
     """
-    gatk HaplotypeCaller -R ${fasta} -I ${meta.id}.markdup.bam -O ${meta.id}.g.vcf.gz -ERC GVCF -L ${params.region} --tmp-dir . > ${meta.id}.hc.log 2>&1
+    gatk HaplotypeCaller -R ${fasta} -I ${meta.id}.markdup.bam -O ${meta.id}.g.vcf.gz -ERC GVCF -L ${params.region} --tmp-dir .
     """
 }

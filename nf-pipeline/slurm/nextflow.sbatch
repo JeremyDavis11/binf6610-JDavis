@@ -14,7 +14,7 @@ export NXF_APPTAINER_CACHEDIR=/scratch/${USER}/nxf-apptainer
 export APPTAINER_CACHEDIR=/scratch/${USER}/apptainer-cache
 
 cd "${SLURM_SUBMIT_DIR}"
-nextflow run main.nf -profile explorer -resume -ansi-log false \
+nextflow run main.nf -profile explorer -ansi-log false -resume \
 	--samplesheet /courses/BINF6610.202710/data/samplesheet-variant8.csv \
 	--ref /courses/BINF6610.202710/data/refs/grch38-1000g/GRCh38_full_analysis_set_plus_decoy_hla.fa \
 	--region chr20:1-10000000 \

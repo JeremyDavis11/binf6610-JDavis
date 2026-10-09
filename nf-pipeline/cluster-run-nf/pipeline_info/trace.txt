@@ -1,0 +1,46 @@
+task_id	name	status	exit	container	native_id	realtime	%cpu	peak_rss
+1	VALIDATE	CACHED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-coreutils_gawk_gzip-7c58ccc2f9ca6bcc.img	10930277	1m 8s	92.2%	12.1 MB
+13	QC_RAW (NA07357)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/quay.io-biocontainers-fastqc-0.12.1--hdfd78af_0.img	10943910	28s	87.7%	542.9 MB
+2	TRIM (NA12878)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-fastp-1.3.7--075357a9d5c82494.img	10943890	29s	91.4%	1.1 GB
+3	TRIM (NA12891)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-fastp-1.3.7--075357a9d5c82494.img	10943891	29.5s	92.2%	1.1 GB
+4	TRIM (NA12892)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-fastp-1.3.7--075357a9d5c82494.img	10943893	34.2s	95.4%	1.3 GB
+9	TRIM (NA12003)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-fastp-1.3.7--075357a9d5c82494.img	10943894	33.6s	94.9%	1.3 GB
+8	TRIM (NA07357)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-fastp-1.3.7--075357a9d5c82494.img	10943898	24.9s	92.8%	1.1 GB
+10	TRIM (NA10851)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-fastp-1.3.7--075357a9d5c82494.img	10943899	28.2s	92.2%	1.1 GB
+11	TRIM (NA12813)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-fastp-1.3.7--075357a9d5c82494.img	10943902	47.7s	95.2%	1.1 GB
+12	TRIM (NA12873)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-fastp-1.3.7--075357a9d5c82494.img	10943905	37.4s	93.3%	1.1 GB
+7	QC_RAW (NA12892)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/quay.io-biocontainers-fastqc-0.12.1--hdfd78af_0.img	10943911	17s	85.1%	441 MB
+14	QC_RAW (NA12003)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/quay.io-biocontainers-fastqc-0.12.1--hdfd78af_0.img	10943913	17s	88.7%	435.7 MB
+15	QC_RAW (NA10851)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/quay.io-biocontainers-fastqc-0.12.1--hdfd78af_0.img	10943914	30s	89.4%	591.2 MB
+5	QC_RAW (NA12878)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/quay.io-biocontainers-fastqc-0.12.1--hdfd78af_0.img	10943907	33s	89.7%	595.8 MB
+17	QC_RAW (NA12873)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/quay.io-biocontainers-fastqc-0.12.1--hdfd78af_0.img	10943917	36s	90.4%	598.6 MB
+6	QC_RAW (NA12891)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/quay.io-biocontainers-fastqc-0.12.1--hdfd78af_0.img	10943909	34s	91.2%	560.3 MB
+16	QC_RAW (NA12813)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/quay.io-biocontainers-fastqc-0.12.1--hdfd78af_0.img	10943915	47s	90.6%	613.6 MB
+20	ALIGN (NA12892)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-bwa_samtools-22527ddb3cc80fb3.img	10943988	39.4s	716.5%	6 GB
+21	ALIGN (NA12003)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-bwa_samtools-22527ddb3cc80fb3.img	10943986	47.1s	711.9%	6 GB
+22	ALIGN (NA07357)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-bwa_samtools-22527ddb3cc80fb3.img	10943990	1m 16s	747.9%	6 GB
+19	ALIGN (NA12891)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-bwa_samtools-22527ddb3cc80fb3.img	10943980	1m 55s	727.9%	6 GB
+18	ALIGN (NA12878)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-bwa_samtools-22527ddb3cc80fb3.img	10943983	1m 54s	719.6%	6 GB
+23	ALIGN (NA10851)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-bwa_samtools-22527ddb3cc80fb3.img	10943992	1m 31s	742.2%	6 GB
+24	ALIGN (NA12813)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-bwa_samtools-22527ddb3cc80fb3.img	10943993	2m 15s	761.9%	6 GB
+25	ALIGN (NA12873)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-bwa_samtools-22527ddb3cc80fb3.img	10943995	2m 1s	712.9%	6 GB
+26	POSTPROCESS (NA12892)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10944110	24.1s	145.8%	10.5 GB
+27	POSTPROCESS (NA12003)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10944112	22.8s	151.9%	11.2 GB
+28	POSTPROCESS (NA07357)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10944113	34s	153.8%	12.5 GB
+29	POSTPROCESS (NA12891)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10944116	39.9s	151.7%	12.5 GB
+31	POSTPROCESS (NA10851)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10944132	40.2s	149.6%	12.5 GB
+30	POSTPROCESS (NA12878)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10944135	39.5s	146.5%	12.6 GB
+32	POSTPROCESS (NA12813)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10944134	1m 2s	145.6%	14.4 GB
+33	POSTPROCESS (NA12873)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10944136	45.2s	149.4%	12.6 GB
+35	QUANTIFY (NA12003)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10944137	3m 32s	160.5%	2.4 GB
+42	QC_REPORT (cohort)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/quay.io-biocontainers-multiqc-1.35--pyhdfd78af_2.img	10944245	11.4s	34.3%	216.7 MB
+34	QUANTIFY (NA12892)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10944140	3m 33s	160.9%	2.4 GB
+36	QUANTIFY (NA07357)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10944158	4m 33s	157.6%	2.4 GB
+39	QUANTIFY (NA12878)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10944174	4m 51s	155.5%	2 GB
+38	QUANTIFY (NA10851)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10944175	4m 46s	155.6%	2.4 GB
+37	QUANTIFY (NA12891)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10944159	5m 17s	158.4%	1.7 GB
+41	QUANTIFY (NA12873)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10944182	5m 45s	154.3%	1.7 GB
+40	QUANTIFY (NA12813)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10944181	7m 6s	153.1%	1.3 GB
+43	MERGE (cohort)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10944402	7m 42s	102.2%	2 GB
+44	ANALYZE (cohort)	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-gatk4_samtools_bcftools-1adede7d418fb46b.img	10944785	9.9s	81.5%	645.9 MB
+45	PUBLISH	COMPLETED	0	/scratch/davis.jer/nxf-apptainer/community.wave.seqera.io-library-coreutils_gawk_gzip-7c58ccc2f9ca6bcc.img	10944787	1.1s	13.9%	1.3 MB
