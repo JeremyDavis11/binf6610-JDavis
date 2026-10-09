@@ -1,4 +1,4 @@
-#/bin/bash
+!#/bin/bash
 #SBATCH --job-name=nf-head
 #SBATCH --account=binf6610.202710
 #SBATCH --partition=courses
