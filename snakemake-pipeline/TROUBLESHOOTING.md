@@ -60,3 +60,15 @@ The output also had the line `Use --strcit-dag-evaluation to force strict mode.`
 This line means that Snakemake was running in non-strcit mode for the dry run. Without the strict constraints, Snakemake tried to put the single ended smoke_03 sample in the paired-end fastp rule, couldn't, and defaulted to putting it in the single ended rule, which worked. The run then was able to proceed to conclusion even with the index error.
 
 
+# Break 4
+
+## Break
+On your first Explorer run, `delete software-deployment-method: apptainer` from `profiles/explorer/profile.yaml`
+
+## Result
+The `fast_qc` rule failed, presumably because `validate` didn't need anything from the containers and `fast_qc` was the first one that did.
+`fast_qc` jobs exited with exit code 1
+Log file contents of first failed job: 
+/usr/bin/bash: line 1: fastp: command not found
+
+AI Disclosure: Anthropic's Claude assisted in debugging three total rules and in diagnosing why the pipeline ran to completion in break 3.
