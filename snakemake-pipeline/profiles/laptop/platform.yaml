@@ -1,0 +1,3 @@
+platform: laptop
+executor: local
+

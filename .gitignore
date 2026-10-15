@@ -1,12 +1,13 @@
 # ignore everything
 /*
 
-# except the week 1 submission (frozen) and the live pipeline
+# except the week 1 submission (frozen) and the live pipelines
 !/week1/
 /week1/*
 !/week1/w01_assignment/
 !/pipeline/
 !/nf-pipeline/
+!/snakemake-pipeline
 
 # and inside those, still skip run output
 out/
@@ -21,3 +22,4 @@ work/
 .nextflow.log*
 results/
 nf-head-*.out
+.snakemake/

@@ -1,4 +1,4 @@
-// Stage 2 - trim - trim adapters an d low quality tails of reads
+// Stage 2 - trim - trim adapters and low quality tails of reads
 // branches on meta.single_end
 process TRIM {
     tag "${meta.id}"
