@@ -39,7 +39,7 @@ Error contents:
 RuleException in file "/Users/jeremydavis/school/computation6610/snakemake-pipeline/Snakefile", line 135:
 Not all output, log and benchmark files of rule bwa_mem contain the same wildcards. This is crucial though, in order to avoid that two or more jobs write to the same file.
 
-Snakemake refused it because the output and logs for a rule mist use the same wildcards in Snakemake so two or more of the bwa_mem runs on different samples don't end up in the same log.
+Snakemake refused it because the output and logs for a rule must use the same wildcards in Snakemake so two or more of the bwa_mem runs on different samples don't end up in the same log.
 
 # Break 3
 
@@ -49,16 +49,20 @@ Delete both `wildcard_constraints`: from your stage-2 rules, and run `snakemake 
 ## Result
 
 Exception:
-InputFunctionException in rule fastp_paired in file "/Users/jeremydavis/school/computation6610/snakemake-pipeline/Snakefile", line 97:
-Error:
-  IndexError: list index out of range
+AmbiguousRuleException:
+Rules fastp_single and fastp_paired are ambiguous for the file work/trim/smoke_03_R1.trim.fastq.gz.
+Consider starting rule output with a unique prefix, constrain your wildcards, or use the ruleorder directive.
+Wildcards:
+	fastp_single: sample=smoke_03
+	fastp_paired: sample=smoke_03
+Expected input files:
+	fastp_single: ../smoke/smoke_03_R1.fastq.gz work/validate/samplesheet.csv
+	fastp_paired: ../smoke/smoke_03_R1.fastq.gz work/validate/samplesheet.csv
+Expected output files:
+	fastp_single: work/trim/smoke_03_R1.trim.fastq.gz work/trim/smoke_03.fastp.json work/trim/smoke_03.fastp.html
+	fastp_paired: work/trim/smoke_03_R1.trim.fastq.gz work/trim/smoke_03_R2.trim.fastq.gz work/trim/smoke_03.fastp.json work/trim/smoke_03.fastp.html
 
-for the `fastp_paired` rule on the `smoke_03` file.
-
-The output also had the line `Use --strcit-dag-evaluation to force strict mode.`
-
-This line means that Snakemake was running in non-strcit mode for the dry run. Without the strict constraints, Snakemake tried to put the single ended smoke_03 sample in the paired-end fastp rule, couldn't, and defaulted to putting it in the single ended rule, which worked. The run then was able to proceed to conclusion even with the index error.
-
+`fastp_single` and `fastp_paired` caused the AmbiguousRuleException and names the smoke_03 single ended file.
 
 # Break 4
 
@@ -66,8 +70,8 @@ This line means that Snakemake was running in non-strcit mode for the dry run. W
 On your first Explorer run, `delete software-deployment-method: apptainer` from `profiles/explorer/profile.yaml`
 
 ## Result
-The `fast_qc` rule failed, presumably because `validate` didn't need anything from the containers and `fast_qc` was the first one that did.
-`fast_qc` jobs exited with exit code 1
+The `fast_p` rule failed, presumably because `validate` didn't need anything from the containers and `fast_p` did.
+`fast_p` jobs exited with exit code 1
 Log file contents of first failed job: 
 /usr/bin/bash: line 1: fastp: command not found
 
