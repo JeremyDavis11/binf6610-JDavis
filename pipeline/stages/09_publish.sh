@@ -68,7 +68,7 @@ stage_publish() {
 			"finished_at": "${finished_at}",
 			"exit_status": "success"
 			},
-			"platform": { "kind": "${PLATFORM_KIND}", "container": "${APPTAINER_CONTAINER}" },
+			"platform": { "kind": "${PLATFORM_KIND}", "container": "${APPTAINER_CONTAINER:-none}", "batch_job_id": "${AWS_BATCH_JOB_ID:-none}", "batch_queue": "${AWS_BATCH_JQ_NAME:-none}", "batch_compute_environment": "${AWS_BATCH_CE_NAME:-none}"},
 			"reference": { "genome": "GRCh38_full_analysis_set_plus_decoy_hla" },
 			"samples": [ ${samples_json} ],
 			"outputs": [ ${outputs_json} ],

@@ -33,7 +33,7 @@ workflow {
     
     fasta = file(params.ref)
     fai = file("${params.ref}.fai")
-    dict = file(params.ref.replaceAll(/\.fa$/, '.dict')) // swaps .fa for .dict 
+    dict = fasta.resolveSibling("${fasta.baseName}.dict")
     bwa_index = file("${params.ref}.{amb,ann,bwt,pac,sa}")
 
 

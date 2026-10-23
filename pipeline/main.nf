@@ -1,0 +1,1 @@
+../nf-pipeline/main.nf
