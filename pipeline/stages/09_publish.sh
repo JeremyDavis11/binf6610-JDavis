@@ -9,7 +9,7 @@ stage_publish() {
         printf 'run_finished\t%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
         printf 'samplesheet\t%s\n'  "$SHEET"
         printf 'reference\t%s\n'    "$FASTA"
-        printf 'git_commit\t%s\n'   "$(git -C "$PIPE_DIR" rev-parse --short HEAD 2>/dev/null || echo unknown)"
+        printf 'git_commit\t%s\n'   "${GIT_SHA:-$(git -C "$PIPE_DIR" rev-parse --short HEAD 2>/dev/null || echo unknown)}"
         printf 'bwa\t%s\n'          "$(bwa 2>&1 | grep -i version | head -1)"
         printf 'samtools\t%s\n'     "$(samtools --version | head -1)"
         printf 'fastp\t%s\n'        "$(fastp --version 2>&1 | head -1)"
@@ -52,7 +52,7 @@ stage_publish() {
 	done
 	
 	# publish heredoc
-	git_sha=$(git -C "$PIPE_DIR" rev-parse --short HEAD 2>/dev/null || echo unknown)
+	git_sha=${GIT_SHA:-$(git -C "$PIPE_DIR" rev-parse --short HEAD 2>/dev/null || echo unknown)}
 	finished_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 	run_id="${finished_at}-$$"
 
