@@ -8,6 +8,7 @@
 !/pipeline/
 !/nf-pipeline/
 !/snakemake-pipeline
+!/.github/
 
 # and inside those, still skip run output
 out/
