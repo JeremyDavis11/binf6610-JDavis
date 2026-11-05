@@ -12,4 +12,5 @@ stage_analyze() {
 	
     [[ -s "${RES}/cohort.filtered.vcf.gz" ]] || die "analyze produced no filtered VCF"
     log "filtered VCF: $(gzip -dc "${RES}/cohort.filtered.vcf.gz" | grep -c 'QD2') variants flagged"
+    log "caught by each filter: $(awk 'NR>1 && $6!="PASS" {print $6}' "${RES}/variants.tsv" | sort | uniq -c | awk '{printf "%s %s  ", $2, $1}')"
 }
