@@ -1,0 +1,17 @@
+	{
+		"pipeline": {
+			"name": "variant-call",
+			"version": "1.0.0",
+			"implementation": "aws-batch",
+			"git_sha": "0b078f64e58d370a5478d580978f17d34c94c64f",
+			"run_id": "2026-11-05T02:45:44Z-33",
+			"started_at": "2026-11-05T02:41:35Z",
+			"finished_at": "2026-11-05T02:45:44Z",
+			"exit_status": "success"
+			},
+			"platform": { "kind": "aws-batch", "container": "none", "batch_job_id": "da538760-110e-4dab-a7c2-330a84f64efe", "batch_queue": "binf6610-queue", "batch_compute_environment": "binf6610-fargate"},
+			"reference": { "genome": "GRCh38_full_analysis_set_plus_decoy_hla" },
+			"samples": [ {"sample_id":"smoke_01","library_type":"paired","condition":"unaffected"},{"sample_id":"smoke_02","library_type":"paired","condition":"affected"},{"sample_id":"smoke_03","library_type":"single","condition":"affected"} ],
+			"outputs": [ {"stage":"merge","type":"cohort_vcf","path":"cohort.vcf.gz","checksum":"sha256:af35dad1f370f8e48a71d35445d4a81bb18f075b16bc8058bedb1c50ec7cacdf"},{"stage":"analyze","type":"filtered_vcf","path":"cohort.filtered.vcf.gz","checksum":"sha256:a2d4029a4174a3934c1352d7c5e2eb7f90963729cfdc7cfad0f8c4db2375bb3f"},{"stage":"qc_report","type":"multiqc","path":"multiqc_report.html","checksum":"sha256:89b11039ae8f1ee7906ec36249b06259eeca94a6de6316d577608b3970ec0af9"},{"stage":"publish","type":"run_info","path":"db/run_info.tsv","checksum":"sha256:134d4be974712cf314f1d6ccaabce40b78626527437ceec5f11f1f92272a6ab0"} ],
+			"metrics": [ {"sample_id":"smoke_01","metric":"reads_after_trim","value":100000,"unit":"count","stage":"trim"},{"sample_id":"smoke_02","metric":"reads_after_trim","value":100000,"unit":"count","stage":"trim"},{"sample_id":"smoke_03","metric":"reads_after_trim","value":60000,"unit":"count","stage":"trim"} ] 
+		}
