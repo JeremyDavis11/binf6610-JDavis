@@ -60,7 +60,7 @@ stage_publish() {
 	{
 		"pipeline": {
 			"name": "variant-call",
-			"version": "1.0.0",
+			"version": "${PIPELINE_VERSION:-1.0.0}",
 			"implementation": "${IMPLEMENTATION}",
 			"git_sha": "${git_sha}",
 			"run_id": "${run_id}",
