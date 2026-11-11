@@ -25,3 +25,4 @@ results/
 nf-head-*.out
 .snakemake/
 .java/
+*.db
